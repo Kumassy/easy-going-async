@@ -17,7 +17,7 @@ async fn get_star_count(client: &reqwest::Client, repo: String) -> Result<u64> {
         .get("stargazers_count")
         .context("GitHub API error: stargazers_count is not found")?
         .as_u64()
-        .context("GitHub API error: stargazers_count does not integer")?;
+        .context("GitHub API error: stargazers_count is not an integer")?;
     Ok(count)
 }
 
